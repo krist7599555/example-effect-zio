@@ -8,7 +8,9 @@
     "postinstall": "tsplus-install",
     "singleversion": "pnpm pnpm-single-version check",
     "build": "tsc",
-    "dev": "tsc && node dist/index.js",
+    "dev": "pnpm run dev:vite",
+    "dev:tsc": "tsc && node dist/index.js",
+    "dev:vite": "vite-node ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -27,7 +29,9 @@
     "@tsplus/installer": "latest",
     "@types/node": "^18.15.3",
     "node-fetch": "^3.3.1",
-    "typescript": "5.1.0-dev.20230318"
+    "typescript": "5.1.0-dev.20230318",
+    "vite": "^4.2.0",
+    "vite-node": "^0.29.3"
   },
   "pnpmSingleVersion": {
     "includes": [
@@ -36,7 +40,9 @@
     ]
   },
   "devDependencies": {
-    "pnpm-single-version": "^1.4.0"
+    "pnpm": "^7.29.3",
+    "pnpm-single-version": "^1.4.0",
+    "vitest": "^0.29.3"
   },
   "pnpm": {
     "overrides": {

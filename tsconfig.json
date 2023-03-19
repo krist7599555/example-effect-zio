@@ -6,6 +6,7 @@
     "target": "es2021",
     "outDir": "dist",
     "lib": ["ESNext"],
+    "noUnusedLocals": false,
     "inlineSourceMap": true,
     "exactOptionalPropertyTypes": true,
     "skipLibCheck": true,
