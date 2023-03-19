@@ -1,0 +1,44 @@
+{
+  "extends": "./node_modules/@tsconfig/strictest/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "module": "ESNext",
+    "target": "es2021",
+    "outDir": "dist",
+    "lib": ["ESNext"],
+    "inlineSourceMap": true,
+    "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": true,
+    "moduleResolution": "nodenext",
+    "importsNotUsedAsValues": "preserve",
+    "ignoreDeprecations": "5.0",
+    "types": ["@types/node"],
+    "tsPlusTypes": [
+      "./node_modules/@effect-app/core/vendor/effect-data-tsplus.json",
+      "./node_modules/@effect-app/core/vendor/effect-io-tsplus.json",
+      "./node_modules/@effect-app/core/vendor/effect-stm-tsplus.json",
+      "./node_modules/@effect-app/core/vendor/effect-stream-tsplus.json",
+      "./node_modules/@effect-app/core/vendor/fp-ts-optic-tsplus.json"
+    ],
+    "plugins": [
+      {
+        "name": "@effect/language-service",
+        "diagnostics": {
+          "1002": "none"
+        }
+      }
+    ],
+    "transformers": [
+      {
+        "name": "@effect/language-service/transformer",
+        "trace": {
+          "exclude": ["**/*.ts"]
+        }
+      }
+    ]
+  },
+  "include": ["src/**/*.ts"],
+  "files": ["./src/prelude.d.ts"]
+}
